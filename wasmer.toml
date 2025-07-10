@@ -1,7 +1,13 @@
 [package]
 name = "sjhddhfjjjfjfg/FORM"
 version = "0.1.0"
-command = "php /app/index.php"
 
 [fs]
 "/app" = "."
+
+[dependencies]
+"wasmer/php" = "*"
+
+[[command]]
+program = "php"
+args = ["/app/index.php"]
