@@ -1,0 +1,12 @@
+[package]
+name = "yourusername/my-php-app"
+version = "0.1.0"
+
+[fs]
+".": "/"
+
+[dependencies]
+"wasmer/php" = "*"
+
+[command]
+php = "php index.php"
