@@ -8,5 +8,4 @@ version = "0.1.0"
 [dependencies]
 "wasmer/php" = "*"
 
-[command]
-php = "php /app/index.php"
+command = ["php", "/app/index.php"]
