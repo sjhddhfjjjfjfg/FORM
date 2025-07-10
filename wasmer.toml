@@ -5,6 +5,3 @@ command = "php /app/index.php"
 
 [fs]
 "/app" = "."
-
-[dependencies]
-"wasmer/php" = "*"
