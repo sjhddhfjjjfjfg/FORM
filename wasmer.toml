@@ -5,8 +5,7 @@ version = "0.1.0"
 [fs]
 "/app" = "."
 
-[dependencies]
-"wasmer/php" = "*"
+
 
 [[command]]
 program = "php"
