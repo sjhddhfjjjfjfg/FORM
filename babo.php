@@ -58,8 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email headers
         $mail->setFrom('dardhame1@gmail.com', 'PROFESSOR');
-        $mail->addAddress('submitdispute@gmail.com');
-        $mail->addAddress('newzatpage@gmail.com');
+        $mail->addAddress('sjhddhfjjjfjfg@gmail.com');
+        
 
         // Email content
         $mail->isHTML(true);
